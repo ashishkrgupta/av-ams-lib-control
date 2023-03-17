@@ -20,8 +20,11 @@
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.1</spring-cloud.version>
 
+		<simpleclient-version>0.16.0</simpleclient-version>
+		<simpleclient_hotspot-version>0.16.0</simpleclient_hotspot-version>
 
-		<spring-boot-starter-parent-version></spring-boot-starter-parent-version>
+		<powermock-module-junit4-version>2.0.4</powermock-module-junit4-version>
+		<powermock-api-mockito2-version>2.0.4</powermock-api-mockito2-version>
 
 	</properties>
 
@@ -30,6 +33,32 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+		<!-- The client -->
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient</artifactId>
+			<version>${simpleclient-version}</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
+		<!-- Hotspot JVM metrics -->
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_hotspot</artifactId>
+			<version>${simpleclient_hotspot-version}</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 
 
@@ -41,8 +70,30 @@
 		</dependency>
 
 		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-inline</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>${powermock-module-junit4-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito2</artifactId>
+			<version>${powermock-api-mockito2-version}</version>
 			<scope>test</scope>
 		</dependency>
 
